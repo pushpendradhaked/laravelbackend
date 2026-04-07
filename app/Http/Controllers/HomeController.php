@@ -32,4 +32,5 @@ class HomeController extends Controller
 
         return redirect()->back()->with('success', 'data submitted');
     }
+
 }

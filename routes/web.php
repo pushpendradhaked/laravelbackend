@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\StudentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,3 +21,14 @@ use Illuminate\Support\Facades\Route;
 Route::Get("/", [HomeController::class, "index"]);
 
 Route::post('/submit-data', [HomeController::class, 'store'])->name('home.store');
+
+
+//Route in student
+//Route in student
+Route::get('/student', [StudentController::class, 'index'])->name('student.index');
+Route::post('/student-add', [StudentController::class, 'store'])->name('student.store');
+Route::get('/student/edit/{id}', [StudentController::class, 'edit'])->name('student.edit');
+Route::post('/student/update/{id}', [StudentController::class, 'update'])->name('student.update');
+
+
+Route::delete('/student/delete/{id}', [StudentController::class, 'destroy'])->name('student.destroy');
